@@ -81,5 +81,11 @@ describe Item do
         @item.decrement_item_count()
         @item.get_item_count.should eql -1
     end
+    it "can clear item count" do
+        @item.increment_item_count()
+        @item.clear_item_count()
+        @item.get_item_count.should eql 0
+    end
+
     
 end

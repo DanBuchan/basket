@@ -45,6 +45,7 @@ class Checkout
             end
             
             @total_price+=item_total*item_price
+            pricing.send(inst_var).clear_item_count
         end
         
         return @total_price

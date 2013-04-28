@@ -35,6 +35,10 @@ class Item
         @item_count-=1
     end
     
+    def clear_item_count
+        @item_count = 0
+    end
+    
     def get_item_count
         return item_count
     end
