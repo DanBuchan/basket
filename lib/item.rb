@@ -2,7 +2,7 @@ class Item
     #This class represents the items,their prices and any discounts/offers available
     attr_accessor :price, :bogof, :multiplier, :discount_price, :item_count
     
-    def initialize(price,bogof,multi,discounted)
+    def initialize(price = nil,bogof = nil ,multi = nil,discounted = nil)
     
         #do some type checking as we don't want to build an erroneous 
         #object

@@ -1,14 +1,25 @@
-require './spec_helper'
+require 'spec_helper'
 
 describe Item do
 
     before :each do
+        @blank = Item.new()
         @item = Item.new(4.50,0,2,4.00)
         @string = "HI THERE"
     end
     
-    it "can be instantiated" do
+    it "can be instantiated with values" do
         @item.should be_an_instance_of(Item)
+    end
+    it "can be instantiated without values" do
+        @blank.should be_an_instance_of(Item)
+    end
+    it "can be instantiated without values and they are nil" do
+        @blank.price.should be_nil
+        @blank.bogof.should be_nil
+        @blank.multiplier.should be_nil
+        @blank.discount_price.should be_nil
+        
     end
     
     it "can get price" do

@@ -11,6 +11,7 @@ class Checkout
         @total_price = 0
         if pricing.is_a? PricingRules
             @pricing = pricing
+            @pricing.clear_item_counts
         end
     end
     
@@ -43,9 +44,7 @@ class Checkout
             if item_bogof == 1
                 item_total = (item_total.to_f/2).ceil
             end
-            
             @total_price+=item_total*item_price
-            pricing.send(inst_var).clear_item_count
         end
         
         return @total_price
