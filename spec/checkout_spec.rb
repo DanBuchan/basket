@@ -27,6 +27,11 @@ describe Checkout do
         @co.pricing.fr1.increment_item_count
         @co.total.should eql 3.11
     end
+    it "correctly applies bogof" do
+        @co.pricing.fr1.increment_item_count
+        @co.pricing.fr1.increment_item_count
+        @co.total.should eql 3.11
+    end
 
     it "correctly totals first basket" do
         @co.scan("fr1")
