@@ -14,7 +14,7 @@ class Checkout
             @pricing.clear_item_counts
         end
     end
-    
+        
     def scan(item)
         #increments item count for each item type
         #should test for existance of the item type label
