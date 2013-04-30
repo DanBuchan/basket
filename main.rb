@@ -4,7 +4,11 @@ require_relative 'lib/item'
 require_relative 'lib/pricing_rules'
 require_relative 'lib/checkout'
 
-pricing_rules = PricingRules.new()
+
+path = "item_data.txt"
+pricing_rules = PricingRules.new(path)
+
+
 pricing_rules.fr1.set_bogof(0)
 #here we can make arbitrary pricing changes before we start a new
 #basket

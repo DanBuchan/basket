@@ -1,9 +1,11 @@
 require 'spec_helper'
+require 'pp'
 
 describe Checkout do
 
     before :each do
-        pricing_rules = PricingRules.new()
+		path = "item_data.txt"
+        pricing_rules = PricingRules.new(path)
         @co = Checkout.new(pricing_rules)
     end
     
@@ -34,11 +36,11 @@ describe Checkout do
     end
 
     it "correctly totals first basket" do
-        @co.scan("fr1")
+		@co.scan("fr1")
         @co.scan("sr1")
         @co.scan("fr1")
         @co.scan("cf1")
-        #@co.total.should eql 22.25
+		#@co.total.should eql 22.25
         #The text of the test is wrong as it does not take in to account
         #the bogof for fruit tea
         @co.total.should eql 19.34

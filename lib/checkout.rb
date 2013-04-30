@@ -20,8 +20,8 @@ class Checkout
         #should test for existance of the item type label
         item.downcase!
         
-        if PricingRules.method_defined? item
-            @pricing.send(item).increment_item_count
+		if pricing.instance_variable_defined? "@"+item
+			@pricing.send(item).increment_item_count
         else
             return 0
         end
@@ -32,6 +32,9 @@ class Checkout
         #returns the total price
         items = pricing.instance_variables;
         items.each do |it|
+			if it =~ /file|item_data/
+				next
+			end
             inst_var = it.to_s
             inst_var.gsub!(/@/,'')
             

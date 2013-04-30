@@ -1,9 +1,11 @@
 require 'spec_helper'
+require 'pp'
 
 describe PricingRules do
 
     before :each do
-        @pr = PricingRules.new()
+        path = "item_data.txt"
+		@pr = PricingRules.new(path)
     end
     
     it "can be instantiated" do
