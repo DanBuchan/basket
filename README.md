@@ -27,9 +27,10 @@ main.rb
 A worked example of the API being used.
 item_data.txt
 -------------
-The rules for the item pricing and their IDs. In a production system I'd rather have a database with something like 
-this
-  | id | price | bogof | multiplier | discount price |
+The rules for the item pricing and their IDs. In a production system I'd rather have a database with a talble something
+like:
+
+| id | price | bogof | multiplier | discount price |
 
 Class Notes
 ===========
@@ -47,9 +48,8 @@ price if an item count exceeds the bulk value if set. Possibly it would be bette
 scanned total where the instances of each item are created (i.e. pricing_rules).
 pricing_rules.rb
 ----------------
-This class instantiates a list of all the items and initialises their prices. At the moment this is the most fragile
-piece of code as it just hard sets 3 items and then hard codes the item data. In a production system
-with multiple checkouts/clients and maybe multiple users making price and item adjustments I'd envisage the system
-would be underpinned by a database. This class would act as an ORM layer; building it's item list on the fly and 
-also populating each item's data on the fly. Then we could simply add an admin class alongside checkout.rb which
-is capable of adding, deleting and updating items.
+This class instantiates a list of all the items and initialises their prices. For now we read the data out of a text
+file but in a production system with multiple checkouts/clients and maybe multiple users making price and item 
+adjustments I'd envisage the system would be underpinned by a database. This class acts as a very lite ORM layer.
+Building the item list dynamically and also populating each item's data on the fly. Then we could simply add an admin 
+class alongside checkout.rb which is capable of adding, deleting and updating items.
