@@ -25,6 +25,11 @@ Contains the 3 rspec test which test the assorted api functionality
 main.rb
 -------
 A worked example of the API being used.
+item_data.txt
+-------------
+The rules for the item pricing and their IDs. In a production system I'd rather have a database with something like 
+this
+  | id | price | bogof | multiplier | discount price |
 
 Class Notes
 ===========
