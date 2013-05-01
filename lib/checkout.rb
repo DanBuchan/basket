@@ -32,9 +32,9 @@ class Checkout
         #returns the total price
         items = pricing.instance_variables;
         items.each do |it|
-			if it =~ /file|item_data/
-				next
-			end
+	    if it =~ /file|item_data/
+		next
+	    end
             inst_var = it.to_s
             inst_var.gsub!(/@/,'')
             
