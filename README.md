@@ -34,6 +34,10 @@ like:
 
 | id | price | bogof | multiplier | discount price |
 
+TODO
+====
+Refactor the tests to make use of lets
+
 Class Notes
 ===========
 checkout.rb
