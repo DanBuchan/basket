@@ -20,8 +20,8 @@ class Checkout
         #should test for existance of the item type label
         item.downcase!
         
-		if pricing.instance_variable_defined? "@"+item
-			@pricing.send(item).increment_item_count
+	if pricing.instance_variable_defined? "@"+item
+		@pricing.send(item).increment_item_count
         else
             return 0
         end
